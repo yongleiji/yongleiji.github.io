@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咏雷集 - Hymns to the Thunder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="main">
+        <h1 class="title">咏雷集</h1>
+        <h2 class="subtitle">Hymns to the Thunder</h2>
+    </header>
+    <nav>
+        <div class="navigation">
+            <% data.each do |a| %><a href="#<%= a[0] %>"><%= a[0] %></a>
+            <% end %>
+        </div>
+        <button class="switch" type="button">快速导航</button>
+    </nav>
+    <div class="main">
+        <% data.each do |a| %><article id="<%= a[0] %>">
+            <h2><%= a[0] %></h2>
+            <p><%= a[1] %></p>
+        </article>
+        <% end %>
+    </div>
+    <footer class="main" id="footer">
+        <p>整理者：大地重归寂灭 更新时间：<time><%= Time.now.strftime('%Y-%m-%d') %></time></p>
+        <p><a href="https://github.com/yongleiji/yongleiji.github.io" target="_blank">前往项目主页</a></p>
+    </footer>
+    <script>
+        document.querySelector(".switch").onclick = function () {
+            var navStyle = document.querySelector(".navigation").style;
+            if (window.getComputedStyle(document.querySelector("nav")).visibility == "hidden") {
+                navStyle.visibility = "hidden";
+                document.querySelector("nav").style.visibility = "visible";
+            }
+            navStyle.visibility = navStyle.visibility == "hidden" ? "visible" : "hidden";
+        }
+    </script>
+</body>
+
+</html>
