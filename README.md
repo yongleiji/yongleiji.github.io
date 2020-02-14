@@ -26,6 +26,7 @@
 * `yonglei_crawler.rb`: 用于抓取雷老师帖子中带编号的《咏雷》。
 * `yonglei_generator.rb`: 用于生成网页。
 * `yonglei_1-n.csv`: 帖子前 n 页的抓取结果，已经过初步人工核对、整理。
+* `yonglei_1-n.csv.bak`: 未经整理的原始数据。
 * `index.html.erb`: 网页模板。
 * `index.html`: 根据上述 CSV 文件和模板生成的网页。
 * `style.css`: 网页样式表。
